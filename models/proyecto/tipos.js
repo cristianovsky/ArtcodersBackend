@@ -11,6 +11,7 @@ const tiposProyecto = gql`
     descripcion: String!
     tipo: Enum_TipoObjetivo!
   }
+  
 
   input camposObjetivo {
     descripcion: String!
@@ -43,6 +44,7 @@ const tiposProyecto = gql`
 
   type Query {
     Proyectos: [Proyecto]
+    ProyectosPorLider(lider:String!):[Proyecto]
   }
 
   type Mutation {
