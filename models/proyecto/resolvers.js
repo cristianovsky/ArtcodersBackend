@@ -16,6 +16,10 @@ const resolversProyecto = {
       const proyectos = await ProjectModel.find();
       return proyectos;
     },
+    ProyectosPorLider: async (parent, args, context) => {
+      const proyectos = await ProjectModel.find( {lider:args.lider});
+      return proyectos;
+    }
   },
   Mutation: {
     crearProyecto: async (parent, args, context) => {
