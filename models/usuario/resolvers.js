@@ -18,6 +18,11 @@ const resolversUsuario = {
       const usuario = await UserModel.findOne({ _id: args._id });
       return usuario;
     },
+    UsuariosNoPendiente: async (parent, args, context) => {
+      console.log(args);
+      const usuarios = await UserModel.find({ estado:  {$ne:"PENDIENTE" }  });
+      return usuarios;
+    }
   },
   Mutation: {
     crearUsuario: async (parent, args) => {
