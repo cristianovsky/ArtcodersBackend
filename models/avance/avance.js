@@ -26,6 +26,7 @@ const avanceSchema = new Schema({
       type: String,
     },
   ],
+  
   proyecto: {
     type: Schema.Types.ObjectId,
     ref: ProjectModel,
@@ -37,6 +38,7 @@ const avanceSchema = new Schema({
     required: true,
   },
 });
+
 
 const ModeloAvance = model('Avance', avanceSchema);
 

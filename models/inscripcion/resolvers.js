@@ -28,6 +28,10 @@ const resolverInscripciones = {
       const inscripciones = await InscriptionModel.find({ ...filtro });
       return inscripciones;
     },
+    ProyectosPorEstudiante: async (parent, args, context) => {
+      const inscripciones = await InscriptionModel.find( {estudiante:args.estudiante});
+      console.log('ESPIA',inscripciones)
+      return inscripciones;}
 
     // inscripcionesNoAprobadas: async () => {
     //   const ina = await InscriptionModel.find({ estado: 'PENDIENTE' }).populate('estudiante');
