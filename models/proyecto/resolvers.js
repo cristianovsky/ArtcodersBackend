@@ -1,6 +1,7 @@
 import { InscriptionModel } from '../inscripcion/inscripcion.js';
 import { UserModel } from '../usuario/usuario.js';
 import { ProjectModel } from './proyecto.js';
+import { ModeloAvance } from '../avance/avance.js';
 
 const resolversProyecto = {
   Proyecto: {
@@ -16,6 +17,13 @@ const resolversProyecto = {
       });
       return inscripciones;
     },
+    avances: async (parent, args, context) => {
+      const avances = await ModeloAvance.find({
+        proyecto: parent._id,
+      });
+      return avances;
+    },
+
   },
   Query: {
     Proyectos: async (parent, args, context) => {
